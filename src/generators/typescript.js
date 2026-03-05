@@ -69,8 +69,7 @@ export function generateTypeScriptTokens(config) {
   lines.push(`  fontFamily: "${typoOpts.fontFamily}",`);
   lines.push(`  monoFontFamily: "${typoOpts.monoFontFamily}",`);
   for (const step of scaleKeys) {
-    const key = step.replace(/^(\d)/, "_$1");
-    lines.push(`  "${step}": { fontSize: "${typeScale[step]}rem", lineHeight: "${computeLineHeight(typeScale[step] * 16).computed}", letterSpacing: "${computeLetterSpacing(typeScale[step] * 16).em}em" },`);
+    lines.push(`  "${step}": { fontSize: "${typeScale[step]}rem", lineHeight: "${computeLineHeight(typeScale[step] * 16).computed}", letterSpacing: "${computeLetterSpacing(typeScale[step])}" },`);
   }
   lines.push("} as const;");
   lines.push("");
@@ -96,7 +95,7 @@ export function generateTypeScriptTokens(config) {
   }
   lines.push("} as const;");
   lines.push("");
-  const radiusScale = getBorderRadiusScale();
+  const radiusScale = getBorderRadiusScale({});
   lines.push("export const borderRadius = {");
   for (const [name, value] of Object.entries(radiusScale)) {
     lines.push(`  ${safeKey(name)}: "${value}",`);

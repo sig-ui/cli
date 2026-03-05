@@ -6,7 +6,7 @@
  */
 import { mergeWithDefaults } from "@sig-ui/theme";
 import * as path from "node:path";
-/** @typedef {import("@sig-ui/theme").SiguiConfig} SiguiConfig */
+/** @typedef {import("@sig-ui/theme/resolve.js").SiguiConfig} SiguiConfig */
 const CONFIG_FILENAMES = [
   "sigui.config.ts",
   "sigui.config.js",

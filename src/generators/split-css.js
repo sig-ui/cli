@@ -111,7 +111,7 @@ function generatePrimitives(config) {
     const fluidScale = fluidTypeScale({ base: typoOpts.base ?? 16, ratio: typoOpts.ratio ?? 1.2 });
     for (const step of SCALE_KEYS) {
       const fluid = fluidScale[step];
-      lines.push(`  --sg-text-${step}: ${fluid ? fluid.clamp : `${typeScale[step]}rem`};`);
+      lines.push(`  --sg-text-${step}: ${fluid ?? `${typeScale[step]}rem`};`);
       lines.push(`  --sg-leading-${step}: ${computeLineHeight(typeScale[step] * 16).computed};`);
     }
   } else {
@@ -192,7 +192,7 @@ function generatePrimitives(config) {
     lines.push(`  --sg-shadow-${shadow.name}: ${shadow.css};`);
   }
   lines.push("");
-  const radiusScale = getBorderRadiusScale();
+  const radiusScale = getBorderRadiusScale({});
   lines.push("  /* Border radius */");
   for (const [name, value] of Object.entries(radiusScale)) {
     lines.push(`  --sg-radius-${name}: ${value === 0 ? "0" : `${value}px`};`);

@@ -59,7 +59,7 @@ export function generateJSONTokens(config) {
   for (const step of scaleKeys) {
     tokens[`typography.text.${step}`] = `${typeScale[step]}rem`;
     tokens[`typography.leading.${step}`] = computeLineHeight(typeScale[step] * 16).computed;
-    tokens[`typography.tracking.${step}`] = `${computeLetterSpacing(typeScale[step] * 16).em}em`;
+    tokens[`typography.tracking.${step}`] = computeLetterSpacing(typeScale[step]);
   }
   const fontWeights = getFontWeights();
   for (const [name, weight] of Object.entries(fontWeights)) {
@@ -74,7 +74,7 @@ export function generateJSONTokens(config) {
   for (const [name, entry] of spacingScale) {
     tokens[`spacing.${name}`] = entry.rem === "0" ? "0" : entry.rem;
   }
-  const radiusScale = getBorderRadiusScale();
+  const radiusScale = getBorderRadiusScale({});
   for (const [name, value] of Object.entries(radiusScale)) {
     tokens[`radius.${name}`] = value;
   }

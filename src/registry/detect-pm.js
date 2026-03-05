@@ -12,6 +12,7 @@ import * as path from "node:path";
  * @returns {Promise<PackageManager>}
  */
 export async function detectPackageManager(cwd) {
+  /** @type {readonly (readonly [string, PackageManager])[]} */
   const checks = [
     ["bun.lock", "bun"],
     ["bun.lockb", "bun"],

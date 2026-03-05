@@ -63,6 +63,8 @@ export function checkContrastMatrix(roles, palettes) {
   return diagnostics;
 }
 const INTERACTIVE_ROLES = ["primary", "secondary", "danger", "success", "warning", "info"];
+/** @type {readonly ("light" | "dark")[]} */
+const MODES = ["light", "dark"];
 /**
  * checkStateOverlayContrast.
  * @param {{ light: SemanticRoles; dark: SemanticRoles }} roles
@@ -71,7 +73,7 @@ const INTERACTIVE_ROLES = ["primary", "secondary", "danger", "success", "warning
  */
 export function checkStateOverlayContrast(roles, palettes) {
   const diagnostics = [];
-  for (const mode of ["light", "dark"]) {
+  for (const mode of MODES) {
     const modeRoles = roles[mode];
     const textInverse = resolveRoleColor("text-inverse", modeRoles, palettes);
     if (!textInverse)
@@ -251,7 +253,7 @@ export function runPhase2(config) {
   const diagnostics = [];
   let resolved;
   try {
-    resolved = resolveTheme(config);
+    resolved = /** @type {any} */ (resolveTheme(config));
   } catch (e) {
     diagnostics.push({
       phase: "theme",

@@ -7,7 +7,7 @@
 import * as path from "node:path";
 import { Glob } from "bun";
 import { generateTokenCSS } from "./css.js";
-/** @typedef {import("@sig-ui/theme").SiguiConfig} SiguiConfig */
+/** @typedef {import("@sig-ui/theme/resolve.js").SiguiConfig} SiguiConfig */
 /**
  * resolveStylesDir.
  * @returns {string}
