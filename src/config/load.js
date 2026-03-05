@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-check
 
 /**
  * SigUI CLI config module for load.

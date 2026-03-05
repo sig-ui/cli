@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-check
 
 /**
  * SigUI CLI checks module for phase2.

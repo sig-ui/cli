@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-check
 
 /**
  * SigUI CLI generators module for typescript.
