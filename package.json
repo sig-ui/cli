@@ -1,0 +1,42 @@
+{
+  "name": "@sig-ui/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sig-ui/cli.git"
+  },
+  "homepage": "https://github.com/sig-ui/cli",
+  "bugs": "https://github.com/sig-ui/cli/issues",
+  "description": "CLI tooling for SigUI – scaffolding and token CSS generation",
+  "author": "SigID, gentix.dev",
+  "keywords": [
+    "sigui",
+    "design-system",
+    "design-tokens",
+    "ui",
+    "cli"
+  ],
+  "files": [
+    "src",
+    "LICENSE"
+  ],
+  "bin": {
+    "sigui": "src/index.js"
+  },
+  "exports": {
+    ".": { "types": "./src/index.d.ts", "default": "./src/index.js" }
+  },
+  "dependencies": {
+    "@sig-ui/core": "workspace:*",
+    "@sig-ui/theme": "workspace:*",
+    "@sig-ui/components": "workspace:*"
+  },
+  "scripts": {
+    "test": "bun test"
+  }
+}
