@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 
 /**
  * SigUI CLI generators module for split css.

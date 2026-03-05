@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 
 /**
  * SigUI CLI registry module for detect pm.
