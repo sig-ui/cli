@@ -1,6 +1,6 @@
 {
   "name": "@sig-ui/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "license": "MIT",
   "publishConfig": {
@@ -29,7 +29,10 @@
     "sigui": "src/index.js"
   },
   "exports": {
-    ".": { "types": "./src/index.d.ts", "default": "./src/index.js" }
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
   },
   "dependencies": {
     "@sig-ui/core": "workspace:*",
